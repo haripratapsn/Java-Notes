@@ -1,0 +1,150 @@
+22/09/24
+Java Day 2
+
+-> Primitive Data Types
+-> Reference Data Types
+-> Operators in Java
+______________________________________________________________________________________________________________________________________
+
+_________
+3.boolean
+_________
+	True/ False
+
+program
+public class Datatypes{
+  public static void main(String[] args){
+
+ boolean presence=true;
+        System.out.print(presence);}
+}
+
+output
+_______
+true
+
+
+____________
+4.character
+____________
+
+program
+public class Datatypes{
+  public static void main(String[] args){
+
+ char name='a';
+     }
+}
+
+output
+________
+a
+
+Character is used to store only a single character
+Size - 2bytes in most languages character size is only 1 byte but in java it is 2bytes
+
+
+
+all the seen datatypes are primitive data types
+
+String
+______
+Program
+________
+public class Datatypes{
+ public static void main(String[] args){
+  String name="Hari";
+  System.out.println(name);
+  }
+
+output
+______
+Hari
+
+________________________________________________________________________________________________________________________________________________
+                                                                 Reference data types
+_______________________________________________________________________________________________________________________________________________
+
+_______
+1.Date
+_______
+
+program 
+_________
+
+import java.util.Date;
+public class Datatypes{
+  public static void main(String[] args){
+
+Date today=new Date(); ---Syntax
+        System.out.print(today);
+    }
+}
+
+output
+_________
+Sun Sep 22 23:18:54 IST 2024
+
+
+Date is a reference data type
+today is variable
+new is a special "Keyword" in java which tell the compiler to allocate space in RAM	
+
+Keywords cannot be used a any variables for example keywords are 
+*public
+*static
+*void 
+*main
+*new
+*class
+
+we should first import library package import.java.util.Date;
+
+Date reference data type is used to print date with new keyword
+________
+2.Point 
+________
+
+  It is used to refer 2 or more points (for example x:2,y:3)
+
+program
+________
+public class Datatypes{
+  public static void main(String[] args){
+
+Point p1=new Point(2,3);
+        Point p2=p1;
+        System.out.println(p2);
+        p1.x=7;
+        System.out.println(p1);
+        System.out.println(p2);
+}
+
+output 
+______
+java.awt.Point[x=2,y=3]
+java.awt.Point[x=7,y=3]
+java.awt.Point[x=7,y=3]
+
+In reference datatype the data will be allocated in different place and given a new memory location number/reference number the variable will be allocated in different place form the data. The variable stores only the reference number of the data, so that if we change the given data to the variable the data will be changed in the before steps also.
+
+
+//    -- comment
+/* */ -- comment
+______________________________________________________________________________________________________________________________________|                                                                                                        Operators in Java
+|_____________________________________________________________________________________________________________________________________
+
+Operators are used to do calculation and change/manipulate data
+
+In Operators we will see about
+ 
+ 1.Arthimetic operator
+      a. Binary
+      b. Unary
+ 2.Type Casting
+      a. Implicit
+      b. Explicit
+ 3.Relational Operator
+________________________________________________________________________________________________________________________________________________xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+________________________________________________________________________________________________________________________________________________
+
