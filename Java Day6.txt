@@ -1,0 +1,135 @@
+27/09/2024
+Java Day6
+Time->2.16
+
+->Types of methods
+->Parameterized methods
+->Parameterized Void methods
+->Parameterized Non Void methods
+->Non Parameterized Non Void methods
+
+________________________________________________________________________________________________________________________________________________
+                                                              Parameterized methods
+________________________________________________________________________________________________________________________________________________
+
+______________________
+Parameterized function
+______________________
+Parameterized function means to give input to the function.
+If the input is already defined under the function then it is non parameterized function.
+
+1.Void non parameterized function
+2.Void parameterized function
+3.Non void parameterized function
+4.Non void non parameterized function
+
+________________________________________________________________________
+2.Void function with parameters/arguments or Void parameterized function
+________________________________________________________________________
+	In the add() function definition we are going to declare a variable to say that we are going to give something (datatype variable identifier) as a input for the function.
+We will declare variable (the data type and the variable identifier) as the parameters and we can set the input value in the main function.
+It makes the function more reusable.
+
+_________________________________________________
+Q1. Creating a void parameterized function program
+_________________________________________________
+
+public class methods{
+ public static void main(String[] args){
+ add(10,5);
+ System.out.println("the number is added"); 
+ }
+ public static void add(int a, int b){
+ int c=a+b;
+ System.out.println(c);
+ }
+}
+______
+output
+______
+25 
+the number is added
+
+In this program the add() function does not return any Value to the main function. The add() function is called and executed that's all.
+
+_________________________
+3.Non void Parameterized 
+_________________________
+
+	Non void Parameterized function returns some value to the main function.
+
+program
+_______
+public class methods{
+ public static void main(String[] args){
+ System.out.println(add(10,5));  //in the add function the c is not said to print so we are giving print function in main function
+ System.out.println("the number is added");
+ }
+ public static int add(int a, int b){
+ int c=a+b;
+ return c;
+}
+}
+
+output
+_______
+15
+the number is added
+
+In this program the non void function returns c value to the main function. Then c is printed in the main function.
+
+Program
+________
+use case of the non void parameterized function
+
+Q2.To multiply the returned value from a function
+__________________________________________________
+
+public class methods{
+ public class void main(String[] args){
+ int res=add(10,5);
+ res= res *10;
+ System.out.println(res);
+ System.out.println("the number has been multiplied");
+ }
+ public class int add(int a, int b){
+  int c=a+b;
+  return c;
+}
+
+output
+______
+150
+the number has been multiplied
+
+
+______________________________________
+4.Non void non parameterized function
+______________________________________
+
+Does not contain any parameters
+
+program
+_______
+public class{
+ public static void main(String[] args){
+ int res= add();
+ res = res*10;
+ System.out.println(res);
+ System.out.println("The number has been multiplied");
+  
+ }
+ public static int add(){
+  int a=10;
+  int b=5;
+  int c=a+b;
+  return c;
+}
+
+output
+______
+150 
+The number has been multiplied
+
+________________________________________________________________________________________________________________________________________________xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+________________________________________________________________________________________________________________________________________________
