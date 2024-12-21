@@ -1,0 +1,222 @@
+26/09/2024
+Java Day5
+Time - 1.8.27.00
+
+->Nested loops
+->arrays
+->Multi dimensional array
+->OOPs
+->Methods
+->Void Non parameterized Method
+
+________________________________________________________________________________________________________________________________________________
+                                                                   Nested Loops
+________________________________________________________________________________________________________________________________________________
+
+Nested Loops
+____________
+
+1.nested for loop
+__________________
+
+program
+_________
+public class nestedloops{
+ public static void main(String() args){
+ for(int i=1; i<=3 i++)
+ {
+    for(int j=0; j<=3, j++)
+   {
+         System.out.println(i+" "+j)
+   }
+  } 
+ }
+}
+
+output
+______
+1 0
+1 1
+1 2
+1 3
+2 0
+2 1
+2 2
+2 3
+
+________________________________________________________________________________________________________________________________________________
+                                                                       Arrays
+________________________________________________________________________________________________________________________________________________
+ 
+Arrays
+______
+	Array is collection of elements stored under a single variable.
+All the data in the array must be of same datatype.
+Array uses contiguous memory allocation means all the data is stored will be stored continuously in the RAM.
+Arrays in java always uses 0 based index. 
+In arrays the memory allocated will have the value stored as 0 in default.
+
+Array has multi dimensional array
+
+Syntax
+______
+int[]        rollno       =  new       int[50];
+array        Variablename    Keyword   how much space must be allocated
+Datatype
+
+Q1.To use array and store 50 roll no
+____________________________________
+
+program
+_______
+public class arrays{
+ public static void main(String[] args){
+ int[] rollno= new int[50];
+ rollno[0] = 1;
+ rollno[1] = 2;
+ System.out.println(rollno[0]);
+}
+}
+
+output
+______
+1
+
+Q2.To print all the 50 rollno
+_____________________________
+public class arrays{
+ public static void main(String[] args){
+ int[] rollno= new int[50];
+ rollno[0]=1;
+ rollno[1]=3;
+ 
+ for(int i=0; i<=5; i++){
+  System.out.println(rollno[i]);
+ }
+}
+}
+
+output
+______
+1
+3
+0
+0
+0
+
+________________________________________________________________________________________________________________________________________________                       
+
+                                                                   Multi Dimensional array
+________________________________________________________________________________________________________________________________________________
+
+	To utilize matrix
+
+1.Two dimensional array
+_______________________
+
+SYNTAX
+______
+
+int[][]    matrix=         new         int[][];
+datatype   variablename    keyword     data type rows, columns 
+
+
+Q1.To print matrix with 2d array
+________________________________
+program
+_______
+public class twodarray {
+      public static void main(String[] args) {
+        int[][] matrix=new int[5][2];
+          matrix[0][0]=7;
+          matrix[1][0]=7;
+          matrix[2][0]=7;
+          matrix[3][0]=7;
+          matrix[4][0]=7;
+          matrix[0][1]=1;
+          matrix[1][1]=2;
+          matrix[2][1]=3;
+          matrix[3][1]=4;
+          matrix[4][1]=5;
+          for(int i=0; i<5; i++){
+            for (int j=0; j<2; j++){
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();//Important
+        }
+
+output
+______
+7 1
+7 2
+7 3
+7 4
+7 5
+
+________________________________________________________________________________________________________________________________________________
+
+                                                                          OOPS
+________________________________________________________________________________________________________________________________________________
+
+Object oriented programming 
+
+___________
+1.Functions
+___________
+Functions are a block of code which contains a set of input and process the statement under them and delivers the output.
+A function under a class is a Method. 
+In java all the code is written under a class so that there are no functions there are only methods.
+
+________
+2.Method
+________
+ A method contains function definition and function calling.
+1.Function definition mean to define what the function does, for example addition is a function which says to add two number. 
+2.Function calling means to call the defined function and saying it to add two numbers. 
+
+In public static void          add(parameters can be given here){
+                 Return Type   Function Identifier
+
+______________
+3.Return Types:-
+_______________
+ Return types defines the data type of the output of the function.
+
+Void is a return type data type. 
+Void does not return any output for the function.
+
+_________________
+2.Methods Program
+__________________________________________________________________________
+Q1.Creating a method with function identifier add and calling the function
+__________________________________________________________________________
+
+public class methods{
+ public static void main(String[] args){
+
+ add(); //Calling the function
+
+ System.out.println("the number is added");
+ }
+ public static void add(){ //Creating the function
+ int a=10;
+ int b= 5;
+ int c=a+b;
+ System.out.println(c);
+ }
+}
+
+output
+______
+15
+the number is added
+
+1.Void non parameterized function:
+________________________________
+This program is a void function without parameters. 
+It does not give the main function any return value.
+If when the function is called in the main function if it return some value/elements then it is called non-void function.
+If it contains parameters it is said to be with parameterized function.
+If it does not contain any parameters then it is called non parameterized function.
+________________________________________________________________________________________________________________________________________________xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+________________________________________________________________________________________________________________________________________________

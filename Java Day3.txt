@@ -1,0 +1,503 @@
+23/09/2024
+Java Day3
+ 
+-> Arithmetic Operators
+-> Relational Operators
+-> Logical Operators 
+-> Conditional Statements in Java
+-> Iterative Statements in Java
+
+______________________________________________________________________________________________________________________________________
+_____________________________________________________________________________________________________________________________________ 
+|                                                             Arithmetic Operators 
+|_______________________________________________________________________________________________________________________________________________
+
+Arithmetic operators 
+
++  -- addition
+-  -- subtraction
+*  -- multiplication
+/  -- division
+%  -- reminder
+++ -- increment
+-- -- decrement
+
+___________________
+operator precedency
+___________________
+
+/,*
++,-
+
+
+_______________________________________________ 
+1.Binary operators require 2 operands 
+________________________________________________         
+     
+Program 
+________
+public class operator{
+  public static void main(String[] args){
+    int a=30;
+    int b=20;
+    
+    int c=a+b;
+    int d=a-b;
+    int e=a*b;
+    int f=a/b;
+    int g=a%b;
+    
+    System.out.println(c);
+    System.out.println(d);
+    System.out.println(e);
+    System.out.println(f);
+    System.out.println(g);
+   }
+}
+
+output
+_______
+50
+10
+1
+10
+ 
+ **To make the a/b arithmetic operation as a float data output
+
+program 
+________
+public class operator{
+  public static void manin(String[] args){
+      int a=30;
+      int b=20;
+      
+      float c=a/b;
+      System.out.println(c)
+     }}
+
+ output 
+________
+1.0 //Wrong answer so we use Type casting
+
+_________________________________________________________________
+2.Type Casting is to change from one data type to other datatype 
+_________________________________________________________________         
+     
+
+Here Implicit conversion has taken place in a/b where the output is taken as a integer then converted to decimal. 1.5 is output only the integer value is kept and the decimal value is neglected where the integer value the is converted into float 1.0
+
+Here int a/b the answer is 1.5 but the compile's output is 1 which is because the a and b data is stored as a int data type in the memory. To get a decimal output we must use type casting 
+
+We can use explicit conversion to mention that the data is a float then we can get the answer as a float datatype
+
+Program 
+_________
+public class operators{
+  public static void main(String[] args);
+  int a=30;
+  int b=20;
+ 
+  float c = (float)a / (float)b;
+  System.out.println(c);
+  }
+}
+
+output
+_______
+
+1.5
+
+
+________________________________________ 
+3.Unary operators uses only one operand
+________________________________________
+
+In arithmetic unary operators it uses only one operand
+Sytnax
+______
+a++
+Variable_name unary_operator
+
+++ - Increment
+-- - Decrement
+
+Increment and Decrement operations
+
+There are two increment and decrement functions 
+
+   I. Post Increment and Post Decrement ++a,--a
+      In post Increment and post decrement the increment and decrement happens after printing the data 
+
+Program
+________
+public class operator{
+  public static void main(String[] args){
+  int a=30;
+  System.out.println(a++);
+  System.out.println(a);
+  System.out.println(a--);
+  System.out.println(a);
+
+}
+}
+
+output
+_______
+30
+31
+31
+30
+
+   II. Pre Increment and Pre Decrement a++,a--
+       In Pre Increment and Pre decrement the increment and decrement happens before printing the data
+
+Program 
+________
+public class operator{
+  public static void main(String[] args){
+  int a=30;
+  System.out.println(++a);
+  System.out.println(a);
+  System.out.println(--a);
+  System.out.println(a);
+
+}
+}
+
+Output
+_______
+31
+31
+30
+30
+
+________________________________________________________________________________________________________________________________________________ 
+|                                                             Relational Operators 
+|_______________________________________________________________________________________________________________________________________________
+
+Relational operators are to define the relationship between the 2 operands
+
+>   -- Greater than
+<   -- Lesser than
+>=  -- Greater than or equal to
+<=  -- Lesser than or equal to
+==  -- Equivalent
+!=  -- Not equal
+
+The output in relational operators will always be in Boolean.
+
+Program
+_______
+public class operators{
+  public static void main(String[] args){
+  int a=30;
+  int b=20;
+
+  System.out.println(a>b);
+  System.out.println(a<b);
+  System.out.println(a>=b);
+  System.out.println(a<=b);
+  System.out.println(a==b);
+  System.out.println(a!=b);
+}}
+
+output
+______
+true
+false
+true
+false
+false
+true
+
+________________________________________________________________________________________________________________________________________________ 
+|                                                              Logical Operators
+|_______________________________________________________________________________________________________________________________________________
+
+
+Logical operators are 
+  a. AND -- &&
+  b. OR  -- ||
+  c. NOT -- !
+___________________
+operator precedency
+___________________
+
+NOT
+AND
+OR
+
+
+we are using Boolean operators to study logical operators 
+
+Boolean operators has truth table 
+
+1 is true
+0 is false
+_________________________
+Not operator truth table
+_________________________
+Not operator can also be used for single operand
+In not operator it exchanges from true to false and false as true
+1     0
+0     1
+true  false
+false true
+
+program
+________
+public class operators{
+  public static void main(String[] args){
+  boolean a=true;
+  boolean b=false;
+ 
+  System.out.println(!a);
+  System.out.println(!b);
+}}
+
+output
+______
+false
+true
+
+_______________________
+OR operator truth table
+_______________________
+OR operator can only be used if there are two operand 
+If an one of the operand is true then it is true only if both are false it is false
+
+0    0    0
+1    1    1
+1    0    1
+0    1    1
+
+false   false   false
+true    true    true
+true    false   true
+false   true    true
+
+program
+_______
+public class operator{
+  public static void main(String[] args);
+  boolean a=true;
+  boolean b=false;
+
+  System.out.println(a || b);
+}}
+
+output
+______
+true
+
+
+_______________________
+and operator truth table
+_______________________
+and operator can only be used if it has two operands
+In and operator if both are true only true other cases are false
+
+1  1  1
+0  0  0  
+1  0  0
+0  1  0
+true   true   true
+false  false  false
+true   false  false
+false  true   false
+
+program
+_______
+public class operators{
+ public static void main(String[] args){
+ boolean a=true;
+ boolean b=false;
+
+ System.out.println(a && b);
+}}
+
+output
+______
+false
+
+
+______________________________________________________________________________________________________________________________________
+|                                                          Conditional Statements in Java
+|_____________________________________________________________________________________________________________________________________
+
+
+1.if
+2.else
+3.elseif.
+4.nestedif
+5.switchcase
+______
+1.if
+______
+________
+program
+________
+
+public class conditional_statements{
+ public static void main(String[] args){
+  boolean attendance =true;
+  
+ if(attendance == true){
+   
+  System.out.println("attended the class")
+  }
+}
+}
+
+output
+______
+attended the class
+
+______
+2.else
+_______
+program
+________
+public class conditional_statements{
+ public static void main(String[] args){
+  boolean attendence=false;
+
+  if(attendence == true){
+  System.out.println(" attended the class" )
+  }
+  else{
+  System.out.println(" Not attended the class")
+  }
+ }
+}
+
+output
+_______
+
+Not attended the class
+
+__________
+3.else if
+__________
+program
+_______
+
+public class conditional_statement{
+ public static void main(String[] args){
+ char attendance = 'o';
+ 
+ if (attendance == 'p'){
+ System.out.println("attended the class")
+ }
+ 
+ else if (attendance == 'o'){
+ System.out.println("on duty")
+ }
+
+ else{
+ System.out.println("Not attended the class") 
+  }
+ System.out.println("Program ends")
+ }
+}
+
+only if and else can be written only once
+
+else if can be used more than once
+
+____________
+4.nested if
+____________
+
+If there is one more if inside if statement
+
+program
+_______
+public class conditional_statement{
+  public static void main(String[] args){
+  char attendednce='p';
+  int total=40;
+ 
+  if(attendance == 'p'){
+   if(total >=50){
+     System.out.println("Attended the class");
+    }  
+  }
+  else
+  {
+    System.out.println("Not attended the class");
+  }
+   System.out.println("Program ends");
+ }
+}
+
+4.Switch Case
+______________
+
+Switch case is used to give a case based answer chooses the right case for the question.
+If break is not given after writing the case then all the case below them will run.
+: is case used to start the case.
+default case must be given if all the cases above is false then default case will run
+
+Syntax
+______
+
+switch(condition){
+  case 'case1':
+  break;
+  case 'n':
+  break;
+  default:
+  break;
+  }
+
+program
+_______
+public class switchcase{
+ public static void main(String[] args){
+ char attendence='o';
+ 
+ switch (attendence){
+  
+   case 'o':
+     System.out.println("on duty" );
+     break;
+   case 'p':
+     System.out.println("attended the class");
+     break;
+   case 'a':
+     System.out.println("not attended the class");
+     break;
+   default:
+     System.out.println("Invalid");
+     break;
+   }
+ }
+}
+
+output
+______
+on duty
+
+
+Argumented assignment operator
+_______________________________
+
+sum += i;
+
++= -- means sum = sum +i
+ 
+  
+
+______________________________________________________________________________________________________________________________________
+|                                                          Iterative Statements in Java
+|_____________________________________________________________________________________________________________________________________ 
+
+Iterative Statements are loop meant to be used n times repetitively
+1.for loop
+2.while loop
+3.do while loop
+
+________________________________________________________________________________________________________________________________________________xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+________________________________________________________________________________________________________________________________________________
+

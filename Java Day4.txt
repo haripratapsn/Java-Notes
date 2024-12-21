@@ -1,0 +1,271 @@
+24/09/2024 and 25/09/2024
+Java Day4
+
+-> For Loop
+-> While Loop
+-> Do while
+-> Jump Statements
+
+
+______________________________________________________________________________________________________________________________________
+|                                                          Iterative Statements in Java
+|_____________________________________________________________________________________________________________________________________ 
+
+__________
+1.For loop
+__________
+
+Syntax
+_______
+
+for          (int i=0;           i<100;       i++;      ){ Statements;}         
+keyword       Initialization     Condition    Updation
+
+For loop is called as counting loop. We can know how many times the loop will run. The number of loop's are defined.
+Until the condition in this case i<100; becomes true the loop will not end and it will run the statements continuously.
+We can give as many statements as we wish in the loop.
+
+____________________________
+Q1.Printing the name 5 times
+____________________________
+program 
+________
+
+public class forloop{
+ public static void main(String[] args){
+  for (int i=0; i<5; i++){
+   System.out.println("Hari");
+   }
+  }
+}
+
+output
+______
+Hari
+Hari
+Hari
+Hari
+Hari
+
+___________________
+Q2.Sum of n numbers
+___________________
+program
+_________
+public class forloop{
+ public static void main(String[] args){
+  int n=5;
+  int sum=0;
+  for(int i=1; i<n; i++){
+    sum = sum +i;//can also be written using augmented assignment operator
+  }
+  System.out.println("The sum of n numbers is="+sum);
+}
+}
+_______
+output
+_______
+The sum of n numbers is=55
+
+
+______________________________
+Augmented assignment operator
+______________________________
+
+sum += i;
+fact *=i;
+
+_________________________________________________
+
+Q3.Task // To find the sum of n factorial numbers
+_________________________________________________
+program
+________
+public class forloop{
+ public class void main(String[] args){
+  int n=5;
+  int fact=1;
+  for(int i=1; i<=5; i++){
+    fact = fact * i;
+  }
+  System.out.println("the factorial of n numbers is="+fact);
+ }
+}
+
+output
+________
+the factorial of n numbers is=120
+___________
+Explanation
+____________
+fact = fact * i
+1    =  1   * 1
+i++(post increment)
+1    =  1   * 2
+i++
+2    =  2   * 3
+i++
+6    =  6   * 4
+i++
+24   =  24  * 5
+i<=5 condition met loop over
+120  
+fact = 120
+ 
+____________
+2.while loop
+____________
+
+ 	While loop is a Entry controlled loop.
+While loop is in cases where the number of times the loop should run is not defined. 
+In while loop the loop's statement will run until the given condition becomes true. 
+While loop is a condition based loop.
+______
+Syntax
+_______
+while (condition){}
+
+_________________________________________________
+Q1.To print the sum of n numbers using while loop
+_________________________________________________
+________
+program
+________
+public class whileloop{
+ public static void main(String[] args){
+  int n=5;
+  int sum=0;
+  int i=1;
+  
+  while (i<=n){
+   sum = sum + i;
+   i++;
+   }
+  System.our.println("the sum of n numbers is="+sum);
+ }
+}
+_______
+output
+_______
+The sum of n numbers is= 55 
+
+
+___________
+3.do while
+___________
+
+ 	Do while is exit controlled loop.
+The difference btw while and do while is that in while loop the condition is checked before running the loop. 
+In do while the condition is checked after the loop. 
+In do while loop at least once the loop will run.
+_______
+Syntax
+_______
+
+do{
+   Statements
+}while(condition);
+
+________________________________________________
+Q1.To find the sum of n numbers using dowhile loop
+________________________________________________
+program
+_______
+public class whileloop{
+ public static void main(String[] args){
+ int n=5;
+ int sum=0;
+ do{
+    sum += i;
+    i++;
+    }while(i<=n);
+  System.out.println("the sum of n numbers is="+sum);
+}}
+
+output
+_______
+the sum of n numbers is=15
+
+_____________________________________________
+
+Q2.Difference in while loop and do while loop
+______________________________________________
+
+program
+_______
+public class whileloop{
+ public static void main(String[] args){
+  int n=5;
+  int sum=0;
+  int i=6;
+  while(i<=n){
+   sum += i;
+   i++;
+   }
+   System.out.println("The difference is that it did not run the loop because the condition is false="+sum);
+ }
+ do{
+    sum += i;
+    i++;
+    }while(i<=n);
+    System.out.println("The difference here is that even if the condition is false the loop run's at least once="=sum);
+}
+
+output
+______
+The difference is that it did not run the loop because the condition is false=0
+The difference here is that even if the condition is false the loop run's at least once=6
+
+
+________________________________________________________________________________________________________________________________________________
+|                                                           Jump Statements in Java
+|_______________________________________________________________________________________________________________________________________________
+
+	Jump Statements are a part of Iterative Statements. Jump Statement is used to stop the loop at a particular point.
+
+Jump Statements
+1.break
+2.continue
+_______
+1.break
+_______
+	Break is used to come out of the loop.
+
+Q1.To print numbers from 1 to 10 and stop at 5.
+______________________________________________
+
+program
+________
+public class jumpstatements{
+ public static void main(String[] args){
+  for(int i=1; i<=10; i++){
+    if(i==5){
+      break;}
+   System.out.println(i);
+   }
+  }
+}
+
+output
+______
+5
+
+2.Continue
+__________
+	To Skip the below iterative statements in the loop and start over the loop.
+
+Q1.To only skip a single number from 1 to 10.
+_____________________________________________
+public class jumpstatements{
+ public static void main(String[] args){
+  for(int i=1; i<=10; i++){
+    if(i==5){
+        continue;}
+   System.out.println(i);    
+  }
+ }
+}
+________________________________________________________________________________________________________________________________________________
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+________________________________________________________________________________________________________________________________________________ 
+
