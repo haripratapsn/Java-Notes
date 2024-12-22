@@ -1,1 +1,1 @@
-The notes are about my progress in learning Java-Basics.
+The notes are about my progress on learning Java-Basics repository.
