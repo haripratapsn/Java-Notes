@@ -1,0 +1,151 @@
+Java Day8
+29/09/2024 and 30/09/2024
+Time-3.08
+
+-> Revision
+-> Access Modifiers
+-> Public
+-> Private
+-> Protected
+-> Default
+________________________________________________________________________________________________________________________________________________     
+                                                                Access Modifiers
+________________________________________________________________________________________________________________________________________________
+
+Access Modifiers
+________________
+	Access modifiers defines which functions and fields can be accessed and not accessed in the class.
+The function/methods, fields in the class can be given access to be used in other class by the access modifier.
+
+Types of access modifiers
+1.Public
+2.Private
+3.Protected
+
+_________
+ 1.Public
+_________
+	Main function must always be public and static i.e. (public static void main) because compiler wants to access main function to run the  
+code under the main function.
+Public means that any package and any file in any project can access the public static main function.
+Java compiler will call the main function to run the code under it. 
+Java compiler itself is a different software but it can access the public main function.
+If public access modifier is given to any function that function can be accessed in any class and method.
+
+program
+_______
+class app{
+ String name;
+ int rollno;
+  public void display(){
+   System.out.println(name);
+   System.out.println(rollno);
+  }
+  public void setValues(String str, int num){
+   name=str;
+   rollno=num; 
+  }
+}
+
+class main{
+  public static void main(String[] args){
+     app hari.new app();
+     hari.name="Hari";
+     hari.rollno=69;
+     hari.display();
+
+
+     app Kishore=new app();
+     Kishore.setValues("pon", 55);
+     Kishore.display()
+  }
+
+}
+
+output
+_______
+Hari
+69
+po
+55
+
+
+__________
+ 2.Private
+__________
+	Private access modifier makes the function/fields to be accessed under the particular class and makes it private only for the class in  
+which methods/fields are written.
+
+program
+_______
+program
+_______
+class app{
+ private String name;//Here the string variable is set a private field
+ int rollno;
+
+  public void display(){
+   System.out.println(name);//Private field is set as get function
+   System.out.println(rollno);
+  }
+  public void setValues(String str, int num){ //set fucntion
+   name=str;//Private field is set in another variable this is a set function           
+   rollno=num; 
+  }
+  public String getValue(){//Returns name field inside the class this is a get function
+   return name;
+  }
+}
+
+class main{
+  public static void main(String[] args){
+     app hari.new app(); 
+     hari.name="Hari";//error occurs because the name variable is a private field it cannot be accessed like this in another class
+     hari.rollno=69;
+     hari.display(); //In output it displays as null value because name value is not set her 
+
+
+     app Kishore=new app();
+     Kishore.setValues("pon", 55);//Here the name private field is set a str field so it can be accessed by only passing the arguments and the                            
+                                    field is accessed in the class itself
+     Kishore.display();//The name and rollno is printed without error
+     String std1=Kishore.getValue();//name is returned as return type in this function but name is private field we can acces it using get               
+                                      function
+     System.out.println(std1+"=std2");//We can also manipulate the private field using this get function
+  }
+
+}
+
+output
+______
+null
+69
+pon
+55
+pon=std2
+
+
+_____________
+ 3.Protected
+_____________
+	By using protected access modifier only in the particular project file or the package can access the functions/methods, variable/fields.
+Difference between public and protected is that in public access modifier all the packages and files can access the public data but in protected  
+access modifier only the particular package or file can access the protected variable or methods.
+
+	protected access modifier is beefily used in inheritance.
+
+
+___________
+ 4.Default
+__________
+	If access modifier is not specified then the default access modifier is applied. 
+Which make that only the package can use the variable, class, methods. Other package cannot be access the class, methods and variable if default  
+access modifier is applied.
+
+________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+                                                                                        

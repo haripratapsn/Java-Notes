@@ -1,0 +1,590 @@
+01/10/2024
+Java Day9
+Time-3.38
+
+-> Constructor
+-> Encapsulation
+-> Abstraction
+-> Inheritance, Memory overriding
+-> Polymorphism, Memory overloading
+-> Types of inheritance
+-> Single Inheritance
+-> Multi level Inheritance
+-> Hierarchical Inheritance
+-> Hybrid Inheritance
+-> Multiple Inheritance
+
+
+________________________________________________________________________________________________________________________________________________
+                                                                   Constructor
+________________________________________________________________________________________________________________________________________________
+
+
+Constructor
+_____________
+
+	Constructor is created when a object is created for the class.
+Constructor in default contains nothing but has the same name as the class in which the object is created.
+Constructor are special type of function which is only called when a object is created, it cannot be called multiple times.
+The difference between constructor and methods are that the constructor cannot be called besides while creating a object, but methods can be called multiple times. The methods have return type and can get input and return value to the main method, but constructor does not have return 
+type and cannot get input.
+
+Constructor are of two type they are 
+
+1. Default Constructor
+2. Parameterized Constructor
+
+________________________
+ 1.Default Constructor
+________________________
+	Default Constructor is a implicit constructor which is created while creating an object with the same class name.
+
+Syntax
+______
+
+class_name object_name= new        class_name();
+           Identifier   Keyword    Constructor//Constructor is created implicitly when object is created
+
+
+Program
+_______
+
+class Sample{
+ int rollno;//Fields
+ int marks;
+
+ Sample(){  //This is the default constructor which will be created when a object is created
+ System.out.println("This is a constructor");// This statement will be printed defiantly when ever the object is created under the same class. 
+ }
+
+
+}
+
+class Construct{
+ public static void main(String[] args){
+ Sample obj=new Sample();
+ System.out.println(obj.rollno);
+ System.out.println(obj.marks);
+ 
+ }
+
+}
+
+output
+______
+
+
+
+_____________________________
+ 2.Parameterized Constructor
+_____________________________
+	In parameterized constructor the parameters can be given to the constructor to initialize value.
+If in the Constructor the parameters is set then the parameters will be default value when ever the object is created under the same class.
+
+
+Syntax
+______
+
+class Sample{
+ int rollno;
+ int marks;
+ 
+ Sample(int num, int mark){ // Default Parameters can be given and initialized in the constructor.
+  System.out.println("This is a constructor");
+  rollno=num;
+  marks=mark;
+  
+ }
+
+ void display(){
+ System.out.println(rollno);
+ System.out.println(marks);
+ }
+ 
+}
+
+class construct{
+ public static void main(String[] args){
+ Sample obj=new Sample(70, 50);
+ System.out.println(obj.rollno);
+ System.out.println(obj.marks);
+ 
+ 
+ Sample obj1=new Sample(7,50);
+        obj1.display(); //Methods can be called multiple times 
+        obj1.display();
+
+ }
+}
+
+
+output
+______
+
+This is a constructor
+70
+20
+This is a constructor
+7
+50
+7
+50
+
+
+________________________________________________________________________________________________________________________________________________
+
+                                                         4 Pillars of OOPS
+________________________________________________________________________________________________________________________________________________ 
+
+________________
+1. Encapsulation
+_________________
+
+	Encapsulation is one of the pillar of the oops
+Encapsulation means that combining all the methods , fields and functions in a class and making it to be used under a class name through objects.
+Encapsulation means wrapping all a set of data under a single unit (class). This use of single unit or called as class is encapsulation.
+
+Encapsulation is a core concept in object-oriented programming that involves wrapping data and the methods that manipulate that data within a  
+single unit, known as a class. 
+In Java, encapsulation is used to hide the internal state and functionality of an object from the outside world and to protect the object's  
+integrity by preventing unauthorized access and modification.
+
+_______
+program
+_______
+
+class appl{                                           //Encapsulation Starts
+ String name;
+ int rollno;
+
+ public void display(){
+  System.out.println(name);                            //The data is encapsulated or wrapped under the name appl that is class name  
+  System.out.println(rollno);
+  }
+
+  public void setValue(String str, int num){
+  name=str;
+  rollno=num;
+  }
+}                                                      //Encapsulation ends
+
+
+
+class main{
+ public static void main(String[] args){
+  appl obj=new appl();
+  obj.name="hari";
+  obj.rollno=69;
+  obj.display();
+
+  appl obj2=new appl();
+  obj2.setValue("kishore", 55);
+  obj2.display();
+  }
+}
+
+______
+output
+______
+hari
+69
+Kishore
+55
+
+
+
+______________
+2. Abstraction
+______________
+	Abstraction means hiding unnecessary data and showing only the necessary data.(Example If we press accelerator in the car the car move and press break the car stops with this necessary information we can drive a car but if we press a car the fuel is injected into the pistons and energy is created and then the car is moved which is a unnecessary information to learn to drive a car).
+	To hide the unnecessary information from the user is called abstraction.
+
+Access modifiers are used to hide information from other packages and from the user. Like (Private, Protected).
+
+Abstraction is a fundamental concept in programming that involves hiding complex implementation details and exposing only the necessary parts of 
+a code or a system. It's a way to manage complexity by providing a simplified interface and allowing users or other parts of a system to 
+interact with it without needing to understand the underlying complexities.
+
+_______
+program
+_______
+
+class appl{
+ String name;
+ private int rollno; //Abstraction hiding the information from the user the user cannot access rollno field directly
+
+ public void display(){
+  System.out.println(name);                          
+  System.out.println(rollno); //but rollno can be accessed indirectly using get function.
+  }
+
+  public void setValue(String str, int num){
+  name=str;
+  rollno=num; //private rollno field can also be accessed using set parameters function.
+  }
+}          
+
+class main{
+ public static void main(String[] args){
+  appl obj=new appl();
+  obj.name="hari";
+  obj.rollno=69;//here error occurs because abstraction is taken place through the access modifiers and the roolno cannot be accessed directly
+  obj.display();
+
+  appl obj2=new appl();
+  obj2.setValue("kishore", 55);//private roll no can be accessed through the set function
+  obj2.display();              //private roll no can also be accessed through get function
+  }
+}
+
+______            
+output
+______
+hari
+error
+Kishore
+55
+
+
+_______________ 
+3. Inheritance
+_______________
+	Inheritance has two classes which is parent class(Base class, Super class) and child class(sub class).
+In parent class the traits(field, methods and function) are defined .
+The child class can inherit the traits(field, methods and function) from the parent class.
+
+___________________
+Method Overriding
+__________________
+	If same field or method is in both parent class and child class then the field or method in the child class only be used not the fields
+or methods in the parent class. 
+
+______
+Syntax
+______
+
+parent_class_name{
+ fields;
+ methods();
+ }
+child_class_name extends   parent_class_name{
+                 Keyword
+ fields;
+}
+
+
+________________________________________________________
+Q1. To show inheritance from parent class to child class
+________________________________________________________
+________
+program
+________
+
+class animal{
+ int nolegs=4;
+ String parent_name="Animal";
+
+ public static void eat(){
+  System.out.println("I eat with mouth");
+  }
+ 
+  public static void walk(){
+  System.out.println("I walk with 4 legs");
+  }
+}
+
+class dog extends animal{ //Inheritance (Inheriting traits from the parent class)
+ String name="Dog";
+ Boolean bark=true; 
+}
+
+class main{
+  public static void main(String[] args){
+   dog obj=new dog();
+   System.out.println(obj.parent_name); //With the help of inheritance we are able to utilize the fields/functions of animal class in the dog 
+                                         classes object
+   System.out.println(obj.name);
+   obj.eat();
+   obj.walk();
+  }
+}
+
+output
+______
+Animal
+Dog
+I eat with mouth
+I walk with 4 legs
+
+____________________________
+Q2.To show method overriding
+____________________________
+class animal{
+    String name="Animal"; //Now the name variable is store with string "Animal"
+    int nolegs=4;
+
+    public static void eat(){
+        System.out.println("I eat with mouth");
+    }
+    public static void walk(){
+        System.out.println("I walk with 4 legs");
+    }
+}
+class dog extends animal{ //Inheritance
+    String name="Dog"; //Here the name variable is feeded with string "Dog"
+    Boolean bark=true;
+    public static void eat(){
+        System.out.println("Dog is eating");
+    }
+}
+class main12{
+    public static void main(String[] args) {
+        dog obj=new dog();
+        System.out.println(obj.name);//The new name form dog class will only be printed not the inherited name due to memory overloading
+        System.out.println(obj.nolegs);
+        System.out.println(obj.bark);
+        obj.eat();// The memory is overloaded in the memory in dog class
+        obj.walk();
+
+
+    }
+}
+
+
+output
+______
+Dog
+4
+true
+Dog is eating
+I walk with 4 legs
+
+
+________________
+4. Polymorphism
+________________
+	Polymorphism has meaning in its name itself i.e. poly means "many" morphism means "forms". 
+To keep many forms for an method.
+If a single method has many forms i.e. polymorphism.
+With method overloading we can use same name for two are more methods with different signature value.
+
+__________________
+Method Overloading
+____________________
+	Same function name in the class but with parameters. Difference in the method is the signature difference i.e.(void, parameters)
+
+
+
+Syntax
+______
+
+void              display(){
+Signature_value   method_name
+}
+
+void              display       (int a){
+Signature_value   method_name   signature_value(parameters)
+
+}
+
+_______
+Program
+_______
+
+class polymorphism{
+ public static void main(String[] args){
+ Methods obj1=new Methods();
+ obj1.display();
+ obj1.display(2);
+ }
+}
+class Methods{
+ void display(){
+  System.out.println("This is a void function");
+  }
+ 
+ void display(int a){       //Both methods have same name but the signature value is different
+  System.out.println(a);
+  }
+
+}
+
+output
+______
+This is a void function
+2
+
+_____________________
+Types of inheritance
+_______________________
+
+1. Single Inheritance
+2. Multi Level Inheritance
+3. Hierarchical Inheritance
+4. Hybrid Inheritance
+5. Multiple Inheritance 
+
+
+1. Single Inheritance
+______________________
+	Only one parent class is inherited in one child class.
+
+Program
+_______
+class Inheritance{
+ public static void main(String[] args){
+   Son s= new Son();
+   System.out.println(s.gender);
+   s.print();
+
+  }
+}
+class Father{  //Parent Class
+ char gender='M';
+ void print(){
+  System.out.println("Parent Class");
+  }
+}
+class Son extends Father{//Child Class we can use the traits of the parent class even though it not implicit in the child class we can use the                      
+                           parent class's traits using inheritance
+}
+
+output
+______
+M
+Parent Class
+
+
+2. Multi Level Inheritance
+___________________________
+	If parent class has a Grand parent class with one child then it is multi level inheritance. If the parent class itself has a grand parent class and with a child class.
+
+program
+_________
+class multilvlinheritance{
+ public static void main(String[] args){
+   Daughter s1=new Daughter();
+   System.out.prntln(s1.gender);
+   s1.print();
+  }
+}
+class Grandfather{
+ char gender='M';
+ void print(){
+  System.out.println("Inherited from the GrandParent class");
+ }
+}
+class Mother extends Grandfather{
+ char gender='F';//Using Method overriding to changer the gender field in the GrandParent class
+}
+class Daughter extends Mother{
+}	
+
+output
+______
+f
+Inherited from GrandParent class
+
+
+
+
+3. Hierarchical inheritance
+_____________________________
+	One parent with more than one child class is hierarchical inheritance.
+
+class hierarchical_inheritance{
+  public static void main(String[] args){
+  son s=new son();
+  System.out.println(s.gender);
+  s.print();
+
+  daughter d=new daughter();
+  System.out.println(d.gender);
+  d.print();
+  }
+}
+class father{ //Parent class
+ char gender='M';
+ void print(){
+  System.out.println("other trait are inherited from the father");
+  }
+}
+class son extends father{//Child class 1
+ char gender='M';//Method overriding
+}
+class daughter extends father{//Child class 2
+char gender='F';//Method overriding
+}
+
+
+output
+_______
+M
+other trait are inherited from the father
+F
+other traits are inherited from the father
+
+
+4. Hybrid Inheritance
+______________________
+	Multiple inheritance together is hybrid inheritance.
+
+for example 
+Q1. Combining Hierarchical inheritance and single inheritance
+
+If a Father has two children then it is said to be Parent class having two child class. Then if the child class has a inherited class then it is 
+single inheritance combining both type of inheritance is called hybrid inheritance.
+
+program
+________
+class hybrisinheritance{
+  public static void main(Strin[] args){
+  son s= new son();
+  System.out.println(s.gender);
+  s.print();
+
+  daughter d= new daughter();
+  System.out.println(d.gender);
+  d.print();
+
+  grand_daughter gd=new grand_daughter();
+  System.out.println(gd.gender);
+  gd.traits();
+  
+  }
+
+}
+class father{
+ char gender='M';
+ void print(){
+  System.out.println("other traits are inherited from the father"); 
+  }
+}
+class son extends father{
+}
+class daughter extends father{
+ char gender='F';  //Method overriding
+}
+class grand_daughter extends daughter{
+ void print(){      //Method overrriding
+ System.out.println("This trait is inherited from the daughter class"); 
+ }
+}
+
+output
+________
+M
+other traits are inherited from the father
+F
+other traits are inherited from the father
+F
+this trait is inherited from the daughter class
+
+
+
+5. Multiple Inheritance
+_______________________
+	With 2 parent and one child. Does not support directly in java.
+Multiple inheritance is not possible directly in Java, we need to refer some concepts before able to apply Multiple inheritance.
+
+_______________________________________________________________________________________________________________________________________________

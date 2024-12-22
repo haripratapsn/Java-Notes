@@ -1,0 +1,233 @@
+Java Day7
+28/09/2024
+Time-2.47
+
+->Recursion
+->Classes 
+->Objects
+
+________________________________________________________________________________________________________________________________________________
+                                                                     Recursion
+________________________________________________________________________________________________________________________________________________
+
+
+When a function calls itself in its function definition is called as recursion.
+
+Base case is the case when the program ends
+Recursive case calling is calling the function again in the function definition
+
+Q1. To print natural number using recursion
+____________________________________________
+public class recursion{
+ public static void main(String[] args){
+ naturalnum(10);
+ }
+ public static void naturalnum(int n){
+  //Base Case: Here we know that 1 is the first natural number in this case it is base and we know it is the last from n numbers given as input.
+   if(n==1){
+      System.out.println(1);
+   }
+   //Rescrsive case to repeat the naturalnum function so that a number is reduced from the n number and continue the recursive loop.
+   else{
+    System.out.println(n);
+    naturalnum(n-1);
+
+    }
+
+output
+______
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+
+________________________________________________________________________________________________________________________________________________                 
+                                                                  Classes and Objects
+________________________________________________________________________________________________________________________________________________
+
+
+In programing languages paradigm there are two types they are
+ 1. Procedure Oriented programing language
+      In procedure oriented programing paradigm code is made with step by step procedural code. 
+From where the codes starts and the end code is defined in main function , the control flow of the code is also said in the procedural paradigms which create challenge in replicating the real-life complex problems .
+Major issues in procedure oriented paradigm are like repetition of code.
+
+ 2. Object Oriented programing language
+      In object oriented programing solves the problems in procedural paradigm like avoid repetition of the code.
+ It was created to solve complex real life problems.
+
+Class 
+_____
+ Class is the blueprint of the object. Class is a template.
+
+Object
+______
+  Object is a instance of the class. 
+
+Object Oriented Programming Language has four pillars they are
+
+1. Encapsulation
+2. Abstraction
+3. Polymorphism
+4. Inheritance
+
+________________________________________________________________________________________________________________________________________________
+
+Class
+____________
+
+Class contains methods, and variables. 
+Class is a collection of variables(fields) and methods(functions).
+
+The members of the class are
+1. Variable 
+2. Methods
+
+Syntax
+______
+
+class class_name{}
+ 
+class           appform    {}
+declaration     class name
+
+
+program
+_______
+
+class appform{
+ String name; //Variable/Fields
+ int rollno;
+   public static void display{  //This function/method is created to display the variable or fields declared
+     System.out.println(name);
+     System.out.println(rollno);
+     } 
+}
+
+Object
+______
+
+ Object is a instance of the class to access the class members in object 
+
+1.First we should create object
+__________________________________
+syntax
+______
+
+appform     hari          =new              appform();
+class_name  object_name   Keyword           class_name();
+                                            Constructor
+
+appform hari = new appform();
+here
+new is a keyword which says to allocate space for the object/variable in RAM.
+Constructor is a new function created in memory with the same class name.
+
+________________________________________________
+To access the members of the class in the object 
+________________________________________________
+
+Syntax
+_______
+object_name.member_name= value;
+hari       .name       = hari;
+
+_______________________________________________________
+Q1. To create a application form using class and object 
+_______
+program
+_______
+
+class appform{
+ String name;
+ int rollno;
+  public void display(){
+   System.out.println(name);
+   System.out.println(rollno);
+   }
+}
+public static void main(String[] args){  //The code starts to run from main function 
+  appform hari= new appform();
+  hari.name="Hari";
+  hari.rollno=21;
+  hari.display();
+
+}
+
+output
+______
+Hari 
+21
+
+___________________________________________________________________________
+Q2. To create parametrized function in the class and create object in class
+___________________________________________________________________________
+class applform{  //Creating class applform
+ String name;    //Declaring field/variable without arguments
+ int rollno;
+  public void display(){ //Creating method/function to display the variable/field
+  System.out.println(name);
+  System.out.println(rollno);
+  }
+  public void setValues(String str, int num){ //Creating method to set parameters
+  name=str;                                   //Declaring parameters value
+  rollno=num;
+  }
+class void main{                             //Creating one more class
+  public static void main(String[] args){    //Main function
+  applform hari= new applform();             //Creating object hari instance from class applform
+  hari.setValues("Hari",71);                 //Accessing method setValue()  and giving the parameters
+  hari.display;                              //Accessing method display()  to display the variable
+
+  applform Kishore= new applform();          //Creating object Kishore instance from class applform
+  Kishore.name="pon";                        //Accessing field from class applform and providing arguments for the field
+  Kishore.rollno=55;                         //Accessing field from class applform and providing arguments for the field
+  Kishore.display();                         //Accessing method display() to display variables
+  }       
+
+}
+}
+
+output
+______
+Hari
+71
+pon
+55
+________________________________________________________________________________________________________________________________________________
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
