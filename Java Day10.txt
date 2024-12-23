@@ -1,0 +1,418 @@
+Java Day10
+Date:23/12/2024
+Time:11.00 PM
+
+-> Abstract Class
+-> Abstract Methods
+-> Interfaces
+-> Static Keyword
+-> Final Keyword
+-> Super Keyword
+________________________________________________________________________________________________________________________________________________
+
+Abstract Class
+_______________
+	Abstraction means hiding information from the user.
+For example in a print statement if give hello world it prints hello world as result, but we don't know the actual procedure how the hello world is 
+printed. Hiding the procedure is abstraction.
+
+we cannot create a object in abstract class.
+Object creation and initialization is not possible in abstract class.
+
+We can only inherit, and override the abstract class. We cant miniplate the abstract class directly by creating an object.
+
+Abstract class and methods cant be initialized.
+
+Syntax
+_______
+abstract class  Computer{}
+Declaration     Class_name
+
+Q1.Showing the difference between abstract class and normal class.
+___________________________________________________________________
+abstract class Computer{
+void TurnON(){
+	Systm.out.println("Turning On"); 
+	     }
+	}
+}
+class Hp extends Computer{
+
+}
+class Dell extends Computer{
+}
+class Abstract{
+public static void main(String[] args){
+Computer obj=new Computer();//We cannot create a object for abstract class and access the function in the abstract class.
+			    //To solve this issue we have to create a inheritance for the abstract class the we can access the function in the 
+			      abstract class
+
+Hp obj=new Hp();
+obj.TurnON();
+
+Dell obj1=new Dell();
+obj1.TurnON();
+
+}
+}
+
+output
+______
+
+Turning On
+Turning On
+
+
+
+Abstract method
+________________
+
+If abstract method is declared then it must be used where the abstract class is inherited. If not it will show error.
+We can do method overriding to change the content in the abstract method in different method.
+
+
+Syntax
+_______
+
+abstract        void            Turnoff();
+abstract   return_type   abstract_method_name();
+
+only declaration of abstract method be done we cant define the abstract method.
+
+Program
+_______
+
+abstract class Computer{
+	abstract void Turnoff();
+
+	void Turnon(){
+	     System.out.println("Turning oN");
+	}
+
+}
+
+class Hp extends Computer{
+	void Turnoff(){
+		System.out.println("Turning OFF - HP");
+	}}
+
+class Dell extends Computer{
+
+	void Turnoff(){
+		System.out.println("Turning OFF-Dell");
+	}
+}
+
+class abstract{
+public static void main(String[] args){
+	Hp obj=new Hp();
+        obj.Turnoff();	
+	obj.Turnon();
+
+	Dell obj2=new Dell();
+	obj2.Turnoff();
+	obj2.Turnon();
+
+	}
+}
+
+output
+_______
+
+Turning OFF - HP
+Turning oN
+Turning OFF-Dell
+Turning oN
+
+
+Interface 
+__________
+
+We should do multiple inheritance using interface.	
+
+Interface is also a kind of class.
+in regular class we can have only one parent but we can have multiple parents. Also it help's in abstraction.
+
+Syntax
+_______
+
+interface   Father{}
+interface interface_name
+
+All the methods in interface must be a abstract class, and it must not have any body.
+
+to inherit Interface in other class we can't use extends, we use implements instead.
+
+class  Interface  implements       Father, Mother{}
+class class_name  keyword        interface_name(We can add more interface class_name) 
+
+
+program
+________
+interface Father{
+abstract void call();
+abstract void talk();
+}
+
+class interface implements Father{
+	public void call(){ //Public Keyword must be used mandatory here otherwise it will show error
+		System.out.println("Calling");
+	}
+
+	public void talk(){ 
+		System.out.println("Talking");
+	}
+
+
+public static void main(String[] args){
+	interface ob=new interface();
+	ob.call();
+	ob.talk();
+	}
+
+}
+
+output
+______
+Calling
+Talking
+
+
+Multiple Inheritance using Interface and abstract class
+_______________________________________________________
+
+Class cannot extend multiple inheritance.
+
+In class inheritance we could use only one class's members in the child class, but multiple inheritance means have two parent class and one 
+child class or more. To solve this we use Interface and abstract method, where there is no declaration in the parent class and the declaration 
+happens in the child class (Over riding the abstract_methods), and we can inherit two parents at the same time.
+
+program
+_______
+
+interface Father{
+ abstract void call();
+ abstract void talk();
+}
+
+interface Mother{
+ abstract void call();
+ abstract void talk();
+}
+
+class Son implements Father, Mother{
+	public void call(){
+		System.out.println("Calling");
+	}
+
+	public void talk(){
+		System.out.println("Talking");
+	}
+
+public static void main(String[] args){
+	Son ob=new Son();
+	ob.call();
+	ob.talk();
+	}
+}
+
+output
+_________
+
+Calling
+Talking
+
+
+
+Static Keyword
+______________
+
+Generally to access the member of a class we first need to create a object for the class then using the object we can access the members of the 
+class. But with
+
+Static Keyword helps the method to be used under any other static method directly without creating any object for the method.
+
+(Compiler use static because it helps reduce memory by not having to create a object to access the class's members)
+
+Static Keywords advantage is that is reduce memory consumption.
+
+program
+_______
+
+class Father{
+static char gender='M';
+static int age=50;
+static void print(){
+	System.out.println("This is a Parent Class");
+	}
+}
+
+class Daughter extends Father{
+char gender='F';
+
+static void print(){
+	System.out.println("This is child class");
+ }
+}
+
+class Static{
+
+public static void main(String[] args){//Static main method (Compiler use static because it helps reduce memory by not having to create a object
+                                                              to access the class memebers)
+	Daughter ob=new Daughter();
+ 	Father.print();//using static called directly under a static method
+	Daughter.print();
+	System.out.println(ob.gender);//Non static member in Daughter class(Called with the help of object)
+	System.out.println(Father.gender);//This is a static member in father class(Called directly)
+	System.out.println(Father.age);//Here we are accessing variable age directly using static
+	Daughter.age=18;//Here we are overriding the age variable data to 18 directly without creating any object using static
+	System.out.println(Father.age);//The same variable is now overridden with the new data
+	}
+
+}
+
+
+output
+_______
+This is a Parent Class
+This is a child class
+F
+M
+50
+18
+
+
+Final Keyword
+______________
+
+If Final Keyword is used in any of the variable or methods it cannot be overridden in any other methods or class.
+ 
+
+Syntax
+_______
+
+final return_type method_name(){}
+
+final data_type identifier="";
+
+
+program
+________
+
+class Fatherr{
+    final char gender='M';
+    final void print(){
+        System.out.println("This is Parent Class");
+    }
+}
+class Daughterr extends Fatherr{
+     /*gender='F';his shows error because the gender variable is a final variable so that it is finalised data and cannot be changed
+        void print(){ // Same for the methods also if final keyword is used for the method then it cannot be overridden
+         System.out.println("This is Child Class");
+     }*/
+}
+public class Final_Keyword {
+    public static void main(String[] args) {
+        Daughterr d=new Daughterr();
+        System.out.println(d.gender);
+        d.print();
+    }
+}
+
+
+output
+______
+
+M
+This is Parent Class
+
+
+
+Super Keyword
+______________
+
+Super Keyword is used to access the inherited variable or method directly in the child class.
+
+Syntax
+_______
+
+super    char       gender       ='M';
+Keyword  Data_type  identifier   data
+
+Program
+________
+
+class father{
+char gender='M';
+void print(){
+Sysstem.out.println("This is parent class");
+}
+}
+class daughter extends father{
+char gender='F';
+void print(){
+System.out.println("This is Child class method")
+super.print();
+System.out.println(super.gender);
+}
+}
+public Super_keyword{
+public static void main(String[] args){
+daughter d=new daughter();
+System.out.println(d.gender);
+d.print();
+}
+}
+
+output
+_______
+f
+This is child class method
+This is parent class
+M
+
+
+
+This Keyword
+_____________
+
+This keyword is used to assign the data in the same instance under the class not under the arguments given in the method. 
+Usually we assign the arguments new identifiers and make them equal to the instance under the class, but "this" keyword is used to make the data
+under the same instance in the class for the arguments as well.
+
+syntax
+_______
+
+this.identifier_name=identifier_instance name;
+
+this.gender=gender;
+
+
+program
+_______
+class man{
+char gender;
+int age;
+void print(char gender, int age){
+	this.gender=gender;
+	this.age.age;
+}
+}
+class This_keyword{
+public static void main(String[] args){
+	man m=new man('M',50);
+	System.out.println(m.gender);
+	System.out.println(m.age);
+}
+}
+
+
+output
+_______
+
+M
+50
+
+
+
+
