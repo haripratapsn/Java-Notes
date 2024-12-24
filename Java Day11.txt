@@ -1,0 +1,586 @@
+Java Day11
+Date:24/12/2024
+Time:
+
+-> Scanner
+-> Exceptional Handling
+-> Default Exception
+-> Try Keyword and Catch Keyword
+-> finally keyword
+-> UserDefined Exception and throws keyword
+-> PreDefined Classes
+-> Integer predefined methods
+-> String predefined methods
+-> Double predefined methods
+________________________________________________________________________________________________________________________________________________
+
+In Java the already defined class always starts with capital letter the first letter.
+
+_______________
+Scanner Package
+_______________
+
+Scanner Package is a collection of class. To access Scanner package we must first create a object for the Scanner the n we can access the inbuilt
+methods of the scanner class in the main method.
+
+Syntax
+_______
+
+import java.util.Scanner;
+
+Scanner object_identifier=new Scanner(System.in);//The System.in argument in the constructor gets the input from the i/0 and sends the input to 
+                                                   the constructor through the console as an object.
+eg-
+Scanner input=new Scanner(System.in);
+
+
+Program
+_______
+
+import java.util.Scanner;
+public class input{
+public static void main(String[] args){
+Scanner input=new Scanner(System.in);//Creating Object for the scanner class
+System.out.println("Enter a integer");
+int a=input.nextint();
+System.out.println("Input="+a);
+}
+}
+
+Input
+_____
+1
+
+output
+______
+Enter a integer
+1
+Input=1
+
+_______________
+Scanner Methods
+_______________
+
+Scanner Package has many methods under its package.
+
+1.Int method
+_____________
+
+Syntax
+______
+int a =input.nextInt();
+
+program
+_______
+import java.util.Scanner;
+public class input{
+public static void main(String[] args){
+Scanner input=new Scanner(System.in);
+System.out.println("Input a integer");
+int a =input.nextInt();
+System.out.println("Integer="+a);
+}
+}
+
+Input
+_____
+1
+
+output
+______
+input a integer
+1
+Integer=1
+
+Float method
+_____________
+
+Syntax
+______
+
+float identifier=Scanner_object_name.nextFloat();
+
+program
+________
+import java.util.Scanner;
+public class input{
+public static void main(String[] args){
+Scanner input=new Scanner(System.in);
+System.out.println("Input Float");
+float a=input.nextFloat();
+System.out.println("Float="+a);
+}
+}
+
+Input
+_____
+1.5
+
+output
+______
+Input Float
+1.5
+Float=1.5
+
+
+3.Charater method
+_________________
+
+We don't have a direct function to print only one character we have to use .charAt(index number);
+charAt is used to select the particular indexed value in the word.
+
+Syntax
+_______
+
+char identifier=Scanner_object_name.next().charAt(index value);
+
+Program
+_______
+
+import java.util.Scanner;
+public class input{
+public static void main(String[] args){
+Scanner input=new Scanner(System.in);
+System.out.println("Input a character");
+char a=input.next().charAt(0);
+System.out.println("Char="+a);
+}
+}
+
+input
+______
+Hello 
+
+output
+_______
+Input a charater
+Hello	
+Char=H
+
+4.String method
+________________
+
+Sting can be inputed with .next(); and nextLine();
+
+syntax
+______
+
+String identifier=Scanner_object_name.next();//For single word
+String identifier=Scanner_object_name.nextLine();//For more than one word
+
+Eg-
+String a=input.next();
+String b=input.nextLine();
+
+Program
+_______
+ 
+import java.util.SCanner;
+public class imput{
+public static void main(String[] args){
+Scannner input=new Scanner(System.in);
+System.out.println("Input the String");
+String a=input.next();     //Here the next() method only prints one word from  the string
+System.out.println("String="+a);
+System.out.println("To print the whole sentence");
+String b=input.nextLine();
+System.out.println("Sentence="+b);
+}
+}
+
+Input
+______
+Hello world
+hello world this is a sentence
+
+Output
+______
+Input the String
+Hello world
+String=Hello
+Input a Sentence
+Hello world this is a sentence
+Sentence=Hello world this is a sentence
+
+Scanner Class
+_____________
+
+Program
+_______
+import java.util.Scanner;
+public class scanner {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter the integer");
+        int a = input.nextInt();
+        System.out.println("Input="+a);
+        System.out.println("Input a float");
+        float e =input.nextFloat();
+        System.out.println("Flaot="+e);
+        System.out.println("Input a charater");
+        char b=input.next().charAt(0);
+        System.out.println("Char="+b);
+        System.out.println("Input the String");
+        String c=input.next();
+        System.out.println("String="+c);
+        System.out.println("Input a Sentence");
+        String d=input.nextLine();
+        System.out.println("Sentence="+d);
+    }
+}
+
+
+Input
+______
+1
+1.555
+cat
+Hello world this is a sentence
+
+output
+________
+enter the integer
+1
+Input=1
+Input a float
+1.555
+Float=1.555
+Input a character
+cat
+Char=c
+Input the String
+Hello world this is a sentence
+String=Hello
+Input a Sentence
+Sentence=world this is a sentence
+
+
+_________________________
+Exceptional Handling - 1
+_________________________
+
+Default Exception
+__________________
+
+Exceptional handling means to handle the already know error by the user with a set a instructions. Which help to continue run the program and 
+create a exception for the error to handle the error from interrupting the rest of the program.
+
+To bring normal termination for the abnormal termination for certain situation like, if anything divide by 0 is 0 but in the compiler it will
+show ArthematicException.
+
+To handle any error in the middle of the program and to give normal termination of the program.
+
+
+
+Syntax
+_______
+
+try{
+	(the exceptional error which needs to be handled);
+	}
+
+catch(type_of_Exception object_name){//Exception is a predefined public class
+(instead of error what must be printed);
+}
+
+
+
+program
+_______
+public class exceptional{
+public static void main(String[] args){
+try{
+	System.out.println(a/b);
+}
+catch(ArithmeticException E){//The error thrown to the compiler is now taken in by the object created by catch argument ArithmeticException's
+                               class's object E
+	System.out.println("b is 0");
+}
+System.out.println("Hello");
+}
+}
+
+
+output
+______
+b is 0
+hello
+
+________________________
+Exceptional Handling- 2
+________________________
+
+Finally block will be printed even if the Exceptional error is thrown in the compiler and even if there is no error thrown.
+
+Under try{} block any amount of catch(){} block can be written cause maybe in one situation there is more than one Exception error.
+
+Syntax
+_______
+try{
+	Error to be caught by catch
+}
+catch(Type_of_Exception object_name){
+	It catches the error thrown to the compiler and stores it in the Object created by Exception class(Predefined class given in catch 
+                                                                                                                                     arguments) 
+}
+catch(Type_of_Exception Object_name){
+	There can be more than one catch(){} block
+}
+finally{
+	This block of code will print even if the error is not caught and even if the error is caught by catch.
+	}
+
+
+
+program
+_______
+
+public class exception{
+public static void main(String[] args){
+int a=5;
+int b=0;
+try{
+System.out.println(a/b);
+}
+catch(ArithmeticException E){
+System.out.println("B is 0");
+}
+catch(Exception E){
+System.out.println("B is 0"); //In this program it has one exceptional error so this catch is not printed or used
+}
+finally{
+System.out.println("Finally");
+}
+System.out.println("Hello");
+}
+}
+
+Output
+_______
+B is 0
+finally
+Hello
+
+Throw keyword
+______________
+
+This keyword helps us to throw exception explicitly as the use wishes.	 
+
+Syntax
+_______
+
+throw new Exception_name("The object needed to be thrown");
+
+program
+________
+
+public class Exception{
+public static void main(String[] args){
+static void handle(int age){//static method is created with argument int age to determine whether the age is above 18
+	if(age<18){//we use if condition 
+	throw new ArithmeticException("Age is Invalid");//This keyword throws exception to the compiler ArithmeticException is a constructor and 
+                                                           we are creating object for that
+	}
+try{
+handle(17);//The exception is now caught in try block and given value
+}
+catch(ArithmeticException E){//Here the Exception is stored in the object E 
+System.out.println(E);//To get only the message from the ArithmeticException we can call .getMessage() method from the ArithmeticException
+}
+finally{
+System.out.println("catch is over");
+}
+}
+}
+}
+
+output
+______
+
+java.lang.ArithmeticException: Invalid age  (if .getMessage() method is used then the output will only be Invalid age)
+catch is over
+
+
+______________
+Exception -3
+______________
+
+User Defined EXception
+______________________
+
+All the Exception are a class so user can also create a Exception with user own definition.
+To create a User Defined Exception
+
+Throws keyword we use in the function definition itself it works as try block for the whole method.
+
+Syntax
+______
+__________________
+Step1-Declaration
+__________________
+class userdefined_exception_name extends Exception{}//It show inherit the already inbuilt Exceptions methods and functions
+____________________________________________
+Step2-Using Throws under methods definition
+____________________________________________
+To use Userdefined Exception we must use throws under a method defintion which is made as a Exception
+Eg:-
+
+static void Handle(int age)throws UserDefinedException,Other_Exception_if_needed{//we can add other Exceptions to the functions also
+}
+__________________________________
+Step3-Try and catch the exception
+_________________________________
+try{}
+catch{}
+
+program
+_______
+
+how the ArithmeticException Throws the message example
+
+class UserDefined extends Exception{
+String msg;
+UserDefined(String str){
+this.msg=str;
+}
+getMsg(){
+return this.msg;
+}
+}
+
+this is the method when we use ArithmeticException(); constructor to Throw the message to the compiler we have replicated it in userdefined.
+
+We donot require to override the already available functions under Exception class so we can simply use super.method_name keyword.
+
+class UserDefined{
+UserDefined(String msg){
+super(msg);}
+}
+class Exception{
+static void Handle(int age)throws UserDefined,ArithmeticException{
+if(age<18){
+ throw new UserDefined("Age is Invalid");
+}
+else{
+throw new ArithmeticException("Age is Valid");
+}
+}
+
+public static void main(String[] args){
+try{
+Handel(17);
+}
+catch(UserDefined E){
+System.out.println(E.getMessage());
+}
+catch(ArithmeticException E){
+System.out.println(E.getMessage());
+}
+}
+}
+
+output
+______
+Age is Invalid
+
+
+Predefined Classes
+__________________
+
+Every inbuilt Class starts with a capital letter.
+________
+example
+________
+1.Integer
+2.String
+3.Character
+4.Boolean
+5.Float
+6.Double
+etc
+
+
+
+1.Integer predefined methods
+_____________________________
+To convert integer value to String
+___________________________________
+
+public class predefinedclass{
+public static void main(String[] args){
+String s =Integer.toString(50);
+System.out.println(s);
+
+/*Converting Integer to binary String*/
+______________________________________
+String d =Integer.toBinaryString(15);
+System.out.println(d);
+
+/*Converting back the String value to integer*/
+
+int f=Integer.valuOf(d);//valueOf is a method which has return value as Integer class so we are printing the variable as an object that is 					stored int the identifier
+System.out.println(f);
+
+/*Converting string bact to integer using parseInt*/
+
+int g=Integer.parseInt(d);//parseInt is a method whic has return type as int 
+System.out.println();
+}
+}
+
+2.String predefined methods
+____________________________
+
+String_identifier.equals;
+String_identifier.charAt();
+
+
+
+program
+________
+public class predefinedclass{
+public static void main(String[] args){
+String f="sad life";
+System.out.println(f.equlas("sad life"));
+
+System.out.println(f.charAt(4));
+
+/*converting char into charater array*/
+
+char[] arr=f.toCharArray();
+System.out.println(arr[2]);
+
+}
+}
+
+output
+______
+true
+l
+a
+
+
+3.Double predefined methods
+____________________________
+
+public class predefinedclass{
+public static void main(String[] args){
+
+String f="5.777";
+System.out.println(Double.parseDouble(f));
+}
+
+}
+
+output
+______
+
+5.777
+
+
+
+
+
+
+
+
