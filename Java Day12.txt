@@ -1,0 +1,198 @@
+Java Day12
+Date:25/12/2024
+Time:1.30 Pm
+
+-> File Reading
+-> File Writing
+
+
+__________________________________________________________________________________________________________________________________________________
+
+File Reading
+_______________ 
+To read a file there is a inbuilt package java.io.File;, Wherever we read a file we should import this package.
+
+To read the contents of the file we must use Scanner class.
+
+
+Syntax
+______
+
+Step 1
+_______
+
+import java.util.Scanner;//Scanner Class to read the file
+import java.io.File;//File class is a inbuilt class used to create object for the file
+
+Step 2
+________
+
+creating object for Scanner, File to access the file
+
+File identifier=new File("path where the file exist");
+
+Scanner identifier=new Scanner(f);
+
+Step 3
+_________
+
+implementing Exception because now there is a eXception that the file is not found int the path error so we need to handle it
+
+try{
+File f=new file("Example.txt");
+Scanner reader=new Scanner(f);
+}
+catch(FileNotFoundException E){
+System.out.println(E);
+}
+
+Step 4
+_______
+
+To close the Scanner_object using .close(); function
+
+import java.util.Scannr;
+import java.io.File;
+public class readingfile{
+public static void main(String[] args){
+try{
+File f=new File("Example.txt");
+Scanner reader=new Scanner(f);
+while(reader.hasNextLine){
+System.out.println(reader.nextLine);
+reader.close();//It is a good practice to close the Scanner_object after the usage of the function is complete
+}
+}
+
+program
+________
+import java.util.Scannr;
+import java.io.File;
+public class readingfile{
+public static void main(String[] args){
+try{
+File f=new File("Example.txt");
+Scanner reader=new Scanner(f);
+while(reader.hasNextLine){
+System.out.println(reader.nextLine);
+reader.close();//It is a good practice to close the Scanner_object after the usage of the function is complete
+}
+}
+catch(FileNotFoundException E){
+System.out.println(E);
+}
+}
+}
+
+output
+_______
+
+Hello world
+sadas
+
+
+Writing in file
+________________
+
+To write something in a file we can use import java.io.FileWriter; package.
+
+Step 1
+______
+
+import necessary package
+
+import java.io.File;
+import java.io.FileWriter;
+
+
+Step 2
+______
+
+To create object for File and File Writer
+
+File file_identifier=new File("Path of the file");
+FileWriter filewriter_identifier=new FileWriter(file_identifier);
+
+
+Step 3
+_______
+
+To create Exception Handling for FileNOtFoundException
+
+try{
+File f=new File("Example.txt");
+FileWriter fw=new FileWriter(f);
+}
+catch(FileNotFoundException E){
+System.out.println(E);
+}
+
+Step 4
+_______
+
+To close the Writer object, otherwise Exception will be thrown
+
+try{
+File f=new File("Example.txt");
+FileWriter fw=new FileWriter(f);
+fw.close();
+
+}
+
+Step 5
+______
+
+To write in the File
+
+try{
+File f=new File("Example.txt");
+FileWriter fw=new FileWriter(f);
+fw.write("Hello Do");
+fw.close;
+}
+
+
+program
+________
+import java.io.File;
+import java.io.FileWriter;
+public class writinginfile{
+public static void main(String[] args){
+try{
+File f=new File("Example.txt");
+FileWriter fw=new FileWriter(f);
+fw.write("Hello do");
+fw.close();
+}
+catch(Exception E){
+System.out.println(E);
+}
+}
+}
+
+output
+______
+
+In Exmaple.txt file
+
+Hello do
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
