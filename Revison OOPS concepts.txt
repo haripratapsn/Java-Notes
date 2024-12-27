@@ -806,24 +806,6 @@ In Exmaple.txt file
 
 Hello do
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
